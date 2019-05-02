@@ -10,4 +10,27 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Kevin's environment variables
+## ACS LOCAL DEV
+#export DOCKER_HOST=localhost:2300 
+#export DOCKER_TLS_VERIFY=1
+# Local dev DML instance
+export LOCAL_DML=http://localhost:30081/repository/acs-project
+
+# PATH
+export PATH="/Users/kviet/Applications/Openshift/:$PATH"
+export PATH="/Users/kviet/Projects/etc/jfr-flame-graph/build/install/jfr-flame-graph/bin:$PATH"
+
+# FLAMEGRAPH
+export FLAMEGRAPH_DIR=/Users/kviet/Projects/etc/FlameGraph/
+
 # Customize to your needs...
+export ANDROID_HOME=/usr/local/share/android-sdk
+
+# GRAAL_VM
+export GRAALVM_HOME=/Users/kviet/Applications/graalvm-ce-1.0.0-rc13/Contents/Home
+
+# Aliases
+alias jdk10="export JAVA_HOME=`/usr/libexec/java_home -v 10` && export PATH=$JAVA_HOME/bin:$PATH; java -version"
+alias jdk8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8` && export PATH=$JAVA_HOME/bin:$PATH; java -version"
+alias docker-acs="docker -Hlocalhost:2300 --tls"
